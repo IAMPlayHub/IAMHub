@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - IAMPlayHub</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh; /* Ensure the body covers the full viewport height */
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .menu-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        .menu-toggle .bar {
+            background: #00ffff;
+            height: 3px;
+            width: 23px;
+            margin: 2px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #00ffff;
+            text-decoration: none;
+        }
+.social-icons a {
+    color: #fff; /* Warna ikon default */
+    margin-left: 10px; /* Jarak antara ikon */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transisi warna dan transformasi */
+    font-size: 1.5rem; /* Ukuran ikon */
+}
+.social-icons a:hover {
+    color: #ffdd57; /* Warna ikon saat hover */
+    transform: scale(1.2); /* Membesarkan ikon saat hover */
+}
+
+.social-icons a.twitter {
+    color: #1DA1F2; /* Warna biru Twitter */
+}
+
+.social-icons a.facebook {
+    color: #1877F2; /* Warna biru Facebook */
+}
+
+.social-icons a.instagram {
+    color: #E4405F; /* Warna merah muda Instagram */
+}
+
+.social-icons a.linkedin {
+    color: #0A66C2; /* Warna biru LinkedIn */
+}
+
+.social-icons a.youtube {
+    color: #FF0000; /* Warna merah YouTube */
+}
+
+.social-icons a.github {
+    color: #b700db; /* Warna hitam GitHub */
+}
+
+.social-icons a.pinterest {
+    color: #E60023; /* Warna merah Pinterest */
+}
+
+.social-icons a.snapchat {
+    color: #FFFC00; /* Warna kuning Snapchat */
+}
+
+.social-icons a.reddit {
+    color: #FF4500; /* Warna oranye Reddit */
+}
+
+.social-icons a.tumblr {
+    color: #35465C; /* Warna biru gelap Tumblr */
+}
+
+.social-icons a.whatsapp {
+    color: #25D366; /* Warna hijau WhatsApp */
+}
+
+.social-icons a.telegram {
+    color: #0088CC; /* Warna biru Telegram */
+}
+
+.social-icons a.flickr {
+    color: #FF0084; /* Warna merah Flickr */
+}
+
+.social-icons a.vimeo {
+    color: #1AB7EA; /* Warna biru Vimeo */
+}
+
+.social-icons a.spotify {
+    color: #1DB954; /* Warna hijau Spotify */
+}
+
+.social-icons a.tiktok {
+    color: #000; /* Warna hitam TikTok */
+}
+
+.social-icons a:hover {
+    color: #ffdd57;
+    transform: scale(1.2);
+}
+
+        footer {
+            background: #000000;
+            color: #ff0000;
+            padding: 10px 0;
+            margin-top: auto; /* Push footer to the bottom */
+            text-align: center; /* Center align the text in the footer */
+        }
+
+        footer nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer nav ul li {
+            margin: 0 15px;
+        }
+
+        footer nav ul li a {
+            color: #00ffff;
+            text-decoration: none;
+        }
+
+        footer p {
+            margin: 10px 0 0 0;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #000000;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                z-index: 10; /* Added to ensure it appears above other content */
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            /* Menu Toggle Animation */
+            .menu-toggle.active .bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 6px);
+            }
+
+            .menu-toggle.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active .bar:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -6px);
+            }
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .hero h2 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+
+        .hero p {
+            margin: 0;
+            font-size: 1.2em;
+            color: #313131;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="menu-container">
+                <div class="menu-toggle" id="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <nav id="nav-menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="policy.html">Policy</a></li>
+                    </ul>
+                </nav>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/ilhamnjiir" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/callmeilhamyahh" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/_Callme_IAM" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://t.me/CalllmeIAM" target="_blank" class="telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="https://github.com/CallmeIAM" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h2>Tentang Kami</h2>
+                <p>Selamat datang di IAMPlayHub! Kami adalah platform yang menyediakan video viral terbaru dan up to date.</p>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
+                    <li><a href="disclaimer.html"><i class="fas fa-exclamation-circle"></i> Disclaimer</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2024 IAMPlayHub. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Aplikasi Web Ilmodsofc Blog siap!');
+
+            // Menu Toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            } else {
+                console.error('Menu toggle or nav menu element not found.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+        /* Reset CSS */
+        .marquee {
+            background-color: #2617f8; /* Warna latar belakang */
+            color: #fff; /* Warna teks */
+            padding: 10px 0; /* Jarak atas dan bawah */
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap; /* Mencegah teks terpotong */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Bayangan bawah */
+        }
+        
+        .marquee p {
+            display: inline-block;
+            padding-left: 100%; /* Posisi teks di luar tampilan awal */
+            animation: marquee 10s linear infinite; /* Animasikan teks berjalan */
+        }
+        
+        @keyframes marquee {
+            from {
+                transform: translateX(100%); /* Mulai dari luar layar kanan */
+            }
+            to {
+                transform: translateX(-100%); /* Berakhir di luar layar kiri */
+            }
+        }
+        
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+        
+                html, body {
+                    height: 100%;
+                }
+        
+                /* Global Styles */
+                body {
+                    font-family: Arial, sans-serif;
+                    line-height: 1.6;
+                    background-color: #f4f4f4;
+                    color: #000000;
+                    display: flex;
+                    flex-direction: column;
+                }
+        
+                .content {
+                    flex: 1;
+                }
+        
+                header {
+                    background: #000000;
+                    color: #fff;
+                    padding: 10px 0;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                    transition: background 0.3s ease;
+                }
+        
+                header:hover {
+                    background: #020202fa;
+                }
+        
+                .container {
+                    width: 90%;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+        
+                .menu-container {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+        
+                .menu-toggle {
+                    display: none;
+                    cursor: pointer;
+                    transition: transform 0.3s ease, background 0.3s ease;
+                }
+        
+                .menu-toggle:hover {
+                    transform: scale(1.1);
+                    background: rgb(0, 0, 0);
+                    border-radius: 5px;
+                }
+        
+                .bar {
+                    width: 27px;
+                    height: 2px;
+                    background: #05fff3;
+                    margin: 4px;
+                    transition: background 0.3s ease, transform 0.3s ease;
+                }
+        
+                .menu-toggle.active .bar:nth-child(1) {
+                    transform: rotate(45deg) translate(5px, 6px);
+                }
+        
+                .menu-toggle.active .bar:nth-child(2) {
+                    opacity: 0;
+                }
+        
+                .menu-toggle.active .bar:nth-child(3) {
+                    transform: rotate(-45deg) translate(5px, -6px);
+                }
+        
+                #nav-menu {
+                    display: flex;
+                    align-items: center;
+                }
+        
+                #nav-menu ul {
+                    display: flex;
+                    list-style: none;
+                }
+        
+                #nav-menu ul li {
+                    margin: 0 15px;
+                    transition: transform 0.3s ease;
+                }
+        
+                #nav-menu ul li a {
+                    color: #02f7ff;
+                    text-decoration: none;
+                }
+        
+                #nav-menu ul li:hover {
+                    transform: scale(1.1);
+                }
+        
+                .social-icons a {
+                    color: #fff; /* Warna ikon default */
+                    margin-left: 10px; /* Jarak antara ikon */
+                    transition: color 0.3s ease, transform 0.3s ease; /* Transisi warna dan transformasi */
+                    font-size: 1.5rem; /* Ukuran ikon */
+                }
+        
+                .social-icons a:hover {
+                    color: #ffdd57; /* Warna ikon saat hover */
+                    transform: scale(1.2); /* Membesarkan ikon saat hover */
+                }
+        
+                .social-icons a.twitter {
+                    color: #1DA1F2; /* Warna biru Twitter */
+                }
+        
+                .social-icons a.facebook {
+                    color: #1877F2; /* Warna biru Facebook */
+                }
+        
+                .social-icons a.instagram {
+                    color: #E4405F; /* Warna merah muda Instagram */
+                }
+        
+                .social-icons a.linkedin {
+                    color: #0A66C2; /* Warna biru LinkedIn */
+                }
+        
+                .social-icons a.youtube {
+                    color: #FF0000; /* Warna merah YouTube */
+                }
+        
+                .social-icons a.github {
+                    color: #9510ee; /* Warna hitam GitHub */
+                }
+        
+                .social-icons a.pinterest {
+                    color: #E60023; /* Warna merah Pinterest */
+                }
+        
+                .social-icons a.snapchat {
+                    color: #FFFC00; /* Warna kuning Snapchat */
+                }
+        
+                .social-icons a.reddit {
+                    color: #FF4500; /* Warna oranye Reddit */
+                }
+        
+                .social-icons a.tumblr {
+                    color: #35465C; /* Warna biru gelap Tumblr */
+                }
+        
+                .social-icons a.whatsapp {
+                    color: #25D366; /* Warna hijau WhatsApp */
+                }
+        
+                .social-icons a.telegram {
+                    color: #0088CC; /* Warna biru Telegram */
+                }
+        
+                .social-icons a.flickr {
+                    color: #FF0084; /* Warna merah Flickr */
+                }
+        
+                .social-icons a.vimeo {
+                    color: #1AB7EA; /* Warna biru Vimeo */
+                }
+        
+                .social-icons a.spotify {
+                    color: #1DB954; /* Warna hijau Spotify */
+                }
+        
+                .social-icons a.tiktok {
+                    color: #000; /* Warna hitam TikTok */
+                }
+        
+                .social-icons a:hover {
+                    color: #ffdd57;
+                    transform: scale(1.2);
+                }
+        
+                .hero {
+                    text-align: center;
+                    padding: 50px 0;
+                    background: #222222;
+                    color: #00ffff;
+                    animation: fadeIn 1s ease-in-out;
+                }
+        
+                .hero h2 {
+                    font-size: 2.5rem;
+                    margin-bottom: 10px;
+                    animation: slideInFromTop 0.6s ease-out;
+                }
+        
+                .hero p {
+                    font-size: 1.2rem;
+                    animation: slideInFromTop 0.8s ease-out;
+                }
+        
+                .slider-container {
+                    position: relative;
+                    max-width: 100%;
+                    margin: 20px 0;
+                    overflow: hidden;
+                }
+        
+                .slides {
+                    display: none;
+                    width: 100%;
+                }
+        
+                .slides img {
+                    width: 100%;
+                    display: block;
+                }
+        
+                .prev, .next {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: rgba(0, 0, 0, 0.5);
+                    color: #00eeff;
+                    border: none;
+                    padding: 10px;
+                    cursor: pointer;
+                    z-index: 10;
+                    transition: background 0.3s ease, transform 0.3s ease;
+                }
+        
+                .prev:hover, .next:hover {
+                    background: rgba(0, 0, 0, 0.8);
+                    transform: scale(1.1);
+                }
+        
+                .prev {
+                    left: 10px;
+                }
+        
+                .next {
+                    right: 10px;
+                }
+        
+                .videos {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    justify-content: center;
+                    margin-bottom: 20px;
+                }
+        
+                .video {
+                    background: #333333;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 5px rgb(255, 0, 0);
+                    transition: box-shadow 0.3s ease, transform 0.3s ease;
+                    max-width: 45%;
+                }
+        
+                .video:hover {
+                    box-shadow: 0 4px 10px rgb(0, 0, 0);
+                    transform: scale(1.05);
+                }
+        
+                .video video {
+                    width: 100%;
+                }
+        
+                .caption {
+                    text-align: center;
+                    padding: 10px;
+                    background: #000000;
+                    color: #00f5fd;
+                }
+        
+                footer {
+                    background: #000000;
+                    color: #ff0000;
+                    padding: 20px 0;
+                    text-align: center;
+                    box-shadow: 0 -2px 4px rgba(0,0,0,0.2);
+                    margin-top: auto;
+                }
+        
+                footer ul {
+                    list-style: none;
+                    padding: 0;
+                    margin-bottom: 10px;
+                }
+        
+                footer ul li {
+                    display: inline;
+                    margin: 0 15px;
+                    transition: transform 0.3s ease;
+                }
+        
+                footer ul li a {
+                    color: #00f7ff;
+                    text-decoration: none;
+                }
+        
+                footer ul li:hover {
+                    transform: scale(1.1);
+                }
+        
+                /* Responsive Styles */
+                @media (max-width: 768px) {
+                    .menu-toggle {
+                        display: block;
+                    }
+        
+                    #nav-menu {
+                        display: none;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        background: #000000;
+                        padding: 10px;
+                        position: absolute;
+                        top: 70px;
+                        right: 0;
+                        width: 160px;
+                        opacity: 0;
+                        transform: translateY(-20px);
+                        transition: opacity 0.3s ease, transform 0.3s ease;
+                    }
+        
+                    #nav-menu.active {
+                        display: flex;
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+        
+                    #nav-menu ul {
+                        flex-direction: column;
+                        width: 100%;
+                    }
+        
+                    #nav-menu ul li {
+                        margin: 10px 0;
+                        width: 100%;
+                        text-align: right;
+                    }
+        
+                    #nav-menu ul li a {
+                        width: 100%;
+                        padding: 10px;
+                        display: block;
+                    }
+        
+                    .videos {
+                        flex-direction: column;
+                    }
+        
+                    .video {
+                        max-width: 100%;
+                    }
+                }
+        
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+        
+                @keyframes slideInFromTop {
+                    from { transform: translateY(-20px); }
+                    to { transform: translateY(0); }
+                }
